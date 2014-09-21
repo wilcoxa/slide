@@ -1,0 +1,69 @@
+---
+title       : Developing Data Products Presentation
+subtitle    : Population Statistics!
+author      : wilcoxa
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap, shiny, interactive}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Australian population statistics
+
+What does the app do?
+
+
+This shiny app reads Australian Bureau of Statistics population data and produces a customisable data table that can also export the data into a csv file.
+
+The population figures can be classified by:
+
+  * Gender
+  * State
+  * Age
+
+---
+
+
+## 3101.0 - Australian Demographic Statistics
+
+Where does the data come from?
+
+About this release
+
+"Quarterly estimates of total population for states, territories and Australia. Includes the most recent estimates of the population in five-year age groups; numbers (and some rates) of births, deaths, infant deaths, interstate and overseas movements. Quarterly and/or annual time series tables throughout. Also includes projected resident populations, projected population in households, projected number of households and projected average household size for states, territories and Australia. Periodically, articles on specific demographic topics will be released on the ABS web site in conjunction with this publication."
+
+---
+
+
+
+## An easier way to extract the data you need
+
+Turn raw data
+
+```{r echo = T, results = 'asis'}
+print(head(RAWERP))
+```
+
+into aggregated form without typing any code!
+
+```{r echo = T, results = 'asis'}
+
+aggregate(Population ~ State, data= RAWERP, FUN = sum)
+
+```
+
+
+---
+
+## Where to find it
+
+Check out the app here:
+[https://wilcoxa.shinyapps.io/APP1/](https://wilcoxa.shinyapps.io/APP1/)
+
+And code available here:
+[https://github.com/wilcoxa/Developingdataproducts](https://github.com/wilcoxa/Developingdataproducts)
+
+

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Developing Data Products Presentation</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Developing Data Products Presentation">
+  <meta name="author" content="wilcoxa">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Developing Data Products Presentation</h1>
+    <h2>Population Statistics!</h2>
+    <p>wilcoxa<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Australian population statistics</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>What does the app do?</p>
+
+<p>This shiny app reads Australian Bureau of Statistics population data and produces a customisable data table that can also export the data into a csv file.</p>
+
+<p>The population figures can be classified by:</p>
+
+<ul>
+<li>Gender</li>
+<li>State</li>
+<li>Age</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>3101.0 - Australian Demographic Statistics</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Where does the data come from?</p>
+
+<p>About this release</p>
+
+<p>&quot;Quarterly estimates of total population for states, territories and Australia. Includes the most recent estimates of the population in five-year age groups; numbers (and some rates) of births, deaths, infant deaths, interstate and overseas movements. Quarterly and/or annual time series tables throughout. Also includes projected resident populations, projected population in households, projected number of households and projected average household size for states, territories and Australia. Periodically, articles on specific demographic topics will be released on the ABS web site in conjunction with this publication.&quot;</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>An easier way to extract the data you need</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Turn raw data</p>
+
+<pre><code class="r">print(head(RAWERP))
+</code></pre>
+
+<p>V1           State  Sex Age Population
+1  1 New South Wales Male   0      51651
+2  2 New South Wales Male   1      50831
+3  3 New South Wales Male   2      49094
+4  4 New South Wales Male   3      49785
+5  5 New South Wales Male   4      49167
+6  6 New South Wales Male   5      48973</p>
+
+<p>into aggregated form without typing any code!</p>
+
+<pre><code class="r">aggregate(Population ~ State, data= RAWERP, FUN = sum)
+</code></pre>
+
+<pre><code>                     State Population
+</code></pre>
+
+<p>1                    Australia   23133712
+2 Australian Capital Territory     381469
+3              New South Wales    7409592
+4           Northern Territory     241196
+5                   Queensland    4655011
+6              South Australia    1670689
+7                     Tasmania     513124
+8                     Victoria    5738876
+9            Western Australia    2520573</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Where to find it</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Check out the app here:
+<a href="https://wilcoxa.shinyapps.io/APP1/">https://wilcoxa.shinyapps.io/APP1/</a></p>
+
+<p>And code available here:
+<a href="https://github.com/wilcoxa/Developingdataproducts">https://github.com/wilcoxa/Developingdataproducts</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Australian population statistics'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='3101.0 - Australian Demographic Statistics'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='An easier way to extract the data you need'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Where to find it'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
